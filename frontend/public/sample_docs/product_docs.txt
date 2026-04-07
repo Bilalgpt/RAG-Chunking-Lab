@@ -1,0 +1,45 @@
+Vectara Search API — Developer Documentation
+
+Overview
+
+The Vectara Search API is a RESTful web service that enables developers to build semantic search, question answering, and retrieval-augmented generation into their applications. All requests use HTTPS and must be authenticated with a valid API key passed in the Authorization header. The base URL for all endpoints is https://api.vectara.io/v2.
+
+Authentication
+
+Every request must include the header Authorization: Bearer YOUR_API_KEY. API keys are generated from the Vectara Console under Settings > API Keys. Keys can be scoped to specific corpora and operations. A key with read-only scope can query documents but cannot create, update, or delete corpora or documents. Production applications should rotate keys every 90 days.
+
+Rate limits apply per API key. The Free tier allows 100 requests per minute and 1,000 requests per day. The Growth tier allows 1,000 requests per minute and 100,000 requests per day. Exceeding rate limits returns HTTP 429 Too Many Requests with a Retry-After header indicating the number of seconds to wait before retrying.
+
+Core Endpoints
+
+POST /corpora
+
+Creates a new corpus. A corpus is a named collection of documents that is searched together. Request body must include a name field (string, maximum 64 characters, alphanumeric and hyphens only) and an optional description field (string, maximum 256 characters). Returns a corpus_id that must be used in all subsequent document and query operations on this corpus.
+
+Example request body: {"name": "product-manuals", "description": "Internal product documentation for search"}
+
+POST /corpora/{corpus_id}/documents
+
+Ingests a document into the specified corpus. The corpus_id path parameter must match an existing corpus. Request body must include a document_id (unique string within the corpus), a title (string), and a sections array. Each section contains a text field with the raw content. The API automatically chunks, embeds, and indexes the content. Returns a 202 Accepted status immediately; indexing completes asynchronously within 30 seconds for documents under 1 MB.
+
+Optional request fields: language (ISO 639-1 code, defaults to "en"), metadata (key-value object with string values, maximum 20 keys), and custom_dimensions (array of floats for hybrid search).
+
+GET /corpora/{corpus_id}/documents/{document_id}
+
+Retrieves metadata and status for a previously ingested document. Returns document_id, title, status (pending, indexed, or failed), chunk_count, and created_at timestamp. Does not return the document text; use the query endpoint to retrieve relevant passages.
+
+DELETE /corpora/{corpus_id}/documents/{document_id}
+
+Permanently removes a document and all its indexed chunks from the corpus. Returns HTTP 204 No Content on success. This operation is irreversible. Documents that are currently being indexed cannot be deleted; retry after the document status changes to indexed.
+
+POST /corpora/{corpus_id}/query
+
+Performs a semantic search across the corpus. Required fields: query (string, maximum 512 characters) and num_results (integer, 1 to 100). Optional fields include lambda (float, 0.0 to 1.0, controls the balance between semantic and keyword matching; 0.0 is fully semantic, 1.0 is fully keyword), offset (integer for pagination), and metadata_filter (SQL-like expression for filtering on document metadata fields).
+
+Returns an array of result objects sorted by relevance score descending. Each result contains document_id, document_title, text (the matched passage), score (float between 0 and 1), and metadata. Setting num_results to a high value does not reduce performance; the index is always searched in full and results are ranked globally.
+
+Error Handling
+
+All error responses use a consistent JSON format with an error_code (string), message (human-readable description), and optional details object. Common error codes include INVALID_API_KEY (authentication failed), CORPUS_NOT_FOUND (the specified corpus does not exist or the key lacks access), QUOTA_EXCEEDED (the account has exhausted its request or storage quota), and DOCUMENT_TOO_LARGE (document exceeds the 10 MB per-document limit).
+
+Client libraries are available for Python, JavaScript, Go, and Java. Each library handles authentication, retries with exponential backoff, and deserialization automatically.

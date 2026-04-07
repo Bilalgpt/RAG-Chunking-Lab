@@ -1,0 +1,39 @@
+Clinical Practice Guidelines: Management of Type 2 Diabetes Mellitus
+
+These guidelines are intended for primary care physicians and endocrinologists managing adult patients with confirmed Type 2 Diabetes Mellitus (T2DM). All recommendations are graded by evidence level (A = high, B = moderate, C = low).
+
+Glycemic Targets
+
+Recommendation 1 (Grade A): The target glycated hemoglobin (HbA1c) for most non-pregnant adults with T2DM is less than 7.0 percent. A less stringent target of less than 8.0 percent is appropriate for patients with limited life expectancy, extensive comorbidities, or history of severe hypoglycemia.
+
+Recommendation 2 (Grade A): Fasting plasma glucose should be maintained between 80 and 130 mg/dL. Postprandial glucose measured two hours after the start of a meal should remain below 180 mg/dL.
+
+Recommendation 3 (Grade B): Self-monitoring of blood glucose is recommended for all patients on insulin regimens. For patients managed with oral agents alone, the frequency of monitoring should be individualized based on clinical need.
+
+First-Line Pharmacotherapy
+
+Recommendation 4 (Grade A): Metformin is the preferred initial pharmacologic agent for T2DM in the absence of contraindications. It should be initiated at 500 mg once or twice daily with meals and titrated to a maximum of 2000 mg per day over four to eight weeks to minimize gastrointestinal side effects.
+
+Recommendation 5 (Grade A): Metformin is contraindicated in patients with an estimated glomerular filtration rate (eGFR) below 30 mL/min/1.73m². It should be used with caution when eGFR is between 30 and 45 and the dose should be reduced.
+
+Recommendation 6 (Grade B): In patients with established cardiovascular disease or high cardiovascular risk, an SGLT-2 inhibitor such as Empagliflozin (10 mg daily) or a GLP-1 receptor agonist such as Semaglutide (0.5 mg subcutaneous weekly, titrated to 1.0 mg) should be added to Metformin regardless of HbA1c level.
+
+Second-Line and Combination Therapy
+
+Recommendation 7 (Grade A): If glycemic targets are not achieved after three months of Metformin monotherapy, dual therapy should be initiated. The choice of second agent depends on individual patient factors including cardiovascular risk, weight, renal function, and cost.
+
+Recommendation 8 (Grade B): DPP-4 inhibitors such as Sitagliptin (100 mg daily) are weight-neutral, have low hypoglycemia risk, and are appropriate for elderly patients or those with renal impairment (dose adjustment required for eGFR below 45).
+
+Recommendation 9 (Grade A): Sulfonylureas such as Glipizide (starting at 5 mg daily, maximum 40 mg daily) are effective and low-cost but carry risks of hypoglycemia and modest weight gain. They should be used with caution in elderly patients and those with irregular meal patterns.
+
+Recommendation 10 (Grade C): Thiazolidinediones such as Pioglitazone improve insulin sensitivity but are associated with fluid retention, heart failure exacerbation, and increased fracture risk. They are contraindicated in patients with New York Heart Association Class III or IV heart failure.
+
+Insulin Initiation
+
+Recommendation 11 (Grade A): Insulin therapy should be initiated in patients with HbA1c greater than 10 percent, symptoms of hyperglycemia, or failure of dual oral therapy. Basal insulin such as Insulin Glargine (starting at 10 units subcutaneous nightly) is the preferred starting regimen.
+
+Recommendation 12 (Grade B): Patients initiating insulin require structured education covering injection technique, glucose monitoring, hypoglycemia recognition and treatment, and sick-day management rules.
+
+Monitoring and Follow-Up
+
+Recommendation 13 (Grade A): HbA1c should be measured every three months until glycemic targets are achieved, then every six months thereafter. Annual screening for diabetic nephropathy (urine albumin-to-creatinine ratio and eGFR), retinopathy (dilated fundus examination), and neuropathy (monofilament testing) is mandatory.
